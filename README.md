@@ -1,5 +1,7 @@
 # NTCG-cart
-Mini project to review NodeJS with EJS and building a static database with models (from NodeJS - The Complete Guide by Maximilian Schwarzmüller)
+Mini project to review NodeJS with EJS and building a static database with models (from NodeJS - The Complete Guide by Maximilian Schwarzmüller).
+
+I was using NPM so you can use nodemon app or npx nodemon app whichever works for you to play around.
 
 ## Main
 ![image](https://user-images.githubusercontent.com/61524356/137970776-77e2d882-5544-483a-8f54-398592ea5bdf.png)
