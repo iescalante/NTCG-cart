@@ -1,4 +1,6 @@
 const path = require("path");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -12,8 +14,13 @@ app.set("views", "views");
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 const errorController = require("./controllers/error");
-const mongoConnect = require("./util/database").mongoConnect;
 const User = require("./models/user");
+
+const authData = {
+  user: process.env.MONGODB_USER,
+  pass: process.env.MONGODB_PASS,
+  useNewUrlParser: true,
+};
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -33,7 +40,9 @@ app.use(shopRoutes);
 app.use(errorController.getErrorPage);
 
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(
+    "mongodb+srv://iescalante:lDsuF1lmbcUHiTbt@cluster001.8wteh.mongodb.net/shop?retryWrites=true&w=majority"
+  )
   .then((result) => {
     app.listen(3000);
   })
