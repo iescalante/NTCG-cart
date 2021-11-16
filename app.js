@@ -16,12 +16,6 @@ const shopRoutes = require("./routes/shop");
 const errorController = require("./controllers/error");
 const User = require("./models/user");
 
-const authData = {
-  user: process.env.MONGODB_USER,
-  pass: process.env.MONGODB_PASS,
-  useNewUrlParser: true,
-};
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
