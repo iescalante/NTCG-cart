@@ -33,9 +33,7 @@ app.use(shopRoutes);
 app.use(errorController.getErrorPage);
 
 mongoose
-  .connect(
-    "mongodb+srv://iescalante:testing12345@cluster001.8wteh.mongodb.net/shop?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGODB_URI)
   .then((result) => {
     app.listen(3000);
   })
