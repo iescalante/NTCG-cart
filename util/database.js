@@ -3,9 +3,7 @@ const { MongoClient } = require("mongodb");
 let _db;
 
 const mongoConnect = (callback) => {
-  const url =
-    "mongodb+srv://iescalante:lDsuF1lmbcUHiTbt@cluster001.8wteh.mongodb.net/shop?retryWrites=true&w=majority";
-
+  const url = process.env.MONGODB_URI;
   const client = new MongoClient(url, {
     ssl: true,
     sslValidate: false,
