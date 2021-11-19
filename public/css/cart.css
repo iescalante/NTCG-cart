@@ -13,6 +13,7 @@
   justify-content: space-between;
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin-bottom: 1rem;
 }
 
 .cart__item h1,
@@ -22,12 +23,3 @@
   margin: 0;
 }
 
-.danger {
-  border: red 1px solid;
-  color: red;
-  background-color: white;
-}
-.danger:hover,
-.danger:active {
-  background-color: red;
-}
